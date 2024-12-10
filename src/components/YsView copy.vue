@@ -3,18 +3,12 @@
     <div class="camera-header">
       <span class="camera-title">{{ title }}</span>
       <div class="camera-controls">
-        <el-select v-model="selectedDevice" placeholder="选择摄像头" :disabled="isRecording">
-          <el-option
-            v-for="device in devices"
-            :key="device.deviceId"
-            :label="device.label" 
-            :value="device.deviceId"
-          />
-        </el-select>
+        <el-input v-model="ipAddress" placeholder="输入IP地址" :disabled="isPlaying" />
+        <el-input v-model="port" placeholder="输入端口号" :disabled="isPlaying" />
         <el-button
           :type="isPlaying ? 'danger' : 'primary'"
           @click="togglePlay"
-          :disabled="!selectedDevice"
+          :disabled="!ipAddress || !port"
         >
           {{ isPlaying ? '停止' : '开始' }}
         </el-button>
@@ -45,20 +39,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { FullScreen } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import EZUIKit from 'ezuikit-js'
-import { ysCloudApi } from '../api/ys-cloud'
-
-// Configure WebAssembly MIME type and instantiation
-if (import.meta.env.DEV) {
-  const wasm = document.createElement('script')
-  wasm.type = 'application/wasm'
-  document.head.appendChild(wasm)
-  
-  // Configure WebAssembly to use ArrayBuffer instantiation
-  WebAssembly.instantiateStreaming = async (response, importObject) => {
-    const buffer = await response.arrayBuffer()
-    return WebAssembly.instantiate(buffer, importObject)
-  }
-}
 
 const props = defineProps({
   title: {
@@ -68,41 +48,32 @@ const props = defineProps({
 })
 
 const videoContainer = ref(null)
-const selectedDevice = ref('')
-const devices = ref([])
+const ipAddress = ref('')
+const port = ref('')
 const isPlaying = ref(false)
 const isRecording = ref(false)
 const player = ref(null)
 
 // 初始化萤石云播放器
 const initPlayer = async () => {
-  if (!selectedDevice.value) {
-    ElMessage.error('请先选择摄像头')
+  if (!ipAddress.value || !port.value) {
+    ElMessage.error('请输入IP地址和端口号')
     return
   }
 
   try {
-    // 获取访问令牌
-    const response = await ysCloudApi.getAccessToken()
-    if (response.code !== '200') {
-      throw new Error(response.msg || '获取访问令牌失败')
-    }
-    
-    const accessToken = response.data.accessToken
-    
-    // 使用选中的设备ID构建URL
-    const deviceUrl = `ezopen://open.ys7.com/${selectedDevice.value}/1.hd.live`
-    
     // 销毁旧的播放器实例
     if (player.value) {
       player.value.destroy()
     }
     
+    // 使用IP和端口构建RTSP URL
+    const videoUrl = `rtsp://${ipAddress.value}:${port.value}/h264/ch1/main/av_stream`
+    
     // 创建新的播放器实例
     player.value = new EZUIKit.EZUIKitPlayer({
       id: 'video-player',
-      accessToken,
-      url: deviceUrl,
+      url: videoUrl,
       template: 'simple',
       autoplay: true,
       handleStart: () => {
@@ -125,19 +96,6 @@ const initPlayer = async () => {
     ElMessage.error('初始化播放器失败：' + error.message)
     console.error('初始化播放器错误:', error)
     isPlaying.value = false
-  }
-}
-
-// 获取设备列表
-const getDevices = async () => {
-  try {
-    // 这里需要调用萤石云API获取设备列表
-    devices.value = [
-      { deviceId: 'BE1298292', label: '摄像头1' }
-    ]
-  } catch (error) {
-    ElMessage.error('获取摄像头列表失败')
-    console.error(error)
   }
 }
 
@@ -202,10 +160,6 @@ const toggleFullscreen = () => {
     videoContainer.value.requestFullscreen()
   }
 }
-
-onMounted(() => {
-  getDevices()
-})
 
 onBeforeUnmount(() => {
   if (player.value) {
