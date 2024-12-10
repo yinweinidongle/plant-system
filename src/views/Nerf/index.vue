@@ -854,7 +854,7 @@ html, body {
   height: 100vh;
   overflow: hidden;
   float: left;
-  border-right: 10px solid #fff;
+  border-right:10px solid #fff ;
 }
 
 #right-section {
@@ -968,7 +968,6 @@ canvas {
 .list-item{
   display: flex;
   flex-direction: row;
-  flex:1;
   height:200px;
   border-right: #fff 1px solid;
 }
@@ -989,12 +988,12 @@ canvas {
 }
 
 .it-col:nth-child(1){
- flex:1;
+ flex:2;
 }
 .it-col:nth-child(2){
  flex:4;
 }
-it-img{width:100%;height:100%;}
+.it-img{width:100%;height:100%;}
 .col-title{height:100px;line-height: 100px;font-size: 30px;font-weight: 700;}
 .col-content{height:40px;line-height: 40px;font-size: 20px;color:beige;}
 
@@ -1004,7 +1003,7 @@ it-img{width:100%;height:100%;}
 
 .video2{position:absolute;top:320px;right:0;padding:10px;width:500px;height:300px;background-color: #fff;}
 
-.compute-info{position:absolute;top:100px;right:0;padding:10px;width:200px;color:#fff;border: 1px solid #fff;transform: translateX(-50%);border-radius: 5px;}
+.compute-info{position:absolute;top:100px;right:1%;padding:10px;width:200px;color:#fff;border: 1px solid #fff;border-radius: 5px;}
 .compute-sub{width:200px;position: relative;}
 .compute-sub>div{padding: 5px 10px;}
 .compute-sub>div.info-title{font-size: large;color:antiquewhite;text-shadow:  0 0 12px yellow;}
@@ -1062,4 +1061,3 @@ it-img{width:100%;height:100%;}
 
 
 </style>
-
