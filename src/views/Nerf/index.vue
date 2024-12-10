@@ -97,8 +97,22 @@ let arr_info = [
 
 ]
 
+
+let arr_demo3 = [{"name":"麦穗","count":"29","filename":"/pcd_demo/demo3/grain0.ply"},
+{"name":"麦穗","count":"18","filename":"/pcd_demo/demo3/grain1.ply"},
+{"name":"麦穗","count":"45","filename":"/pcd_demo/demo3/grain2.ply"},
+{"name":"叶子1","width":"0.4255cm","length":"8.0926cm","area":"5.3354cm²","filename":"/pcd_demo/demo3/leaf0.ply"},
+{"name":"叶子2","width":"2.4131cm","length":"8.0926cm","area":"12.3466cm²","filename":"/pcd_demo/demo3/leaf1.ply"},
+{"name":"叶子3","width":"0.2409cm","length":"3.6027cm","area":"0.505cm²","filename":"/pcd_demo/demo3/leaf2.ply"},
+{"name":"叶子4","width":"0.3385cm","length":"7.6152cm","area":"4.6769cm²","filename":"/pcd_demo/demo3/leaf3.ply"},
+{"name":"叶子5","width":"0.4164cm","length":"10.4487cm","area":"6.3229cm²","filename":"/pcd_demo/demo3/leaf4.ply"},
+{"name":"叶子6","width":"0.3898cm","length":"12.281cm","area":"11.3758cm²","filename":"/pcd_demo/demo3/leaf5.ply"},
+{"name":"茎秆0","width":"0.5896cm","length":"21.7409cm","area":"26.2885cm²","filename":"/pcd_demo/demo3/stem0.ply"},
+{"name":"茎秆1","width":"0.7404cm","length":"13.1906cm","area":"16.1106cm²","filename":"/pcd_demo/demo3/stem1.ply"},
+{"name":"茎秆2","width":"0.9724cm","length":"17.1723cm","area":"22.3211cm²","filename":"/pcd_demo/demo3/stem2.ply"}]
+
 const urls = [
-  "http://localhost:35747",
+  
   "http://localhost:7007",
   "http://localhost:35747"
 ]
@@ -106,15 +120,15 @@ const urls = [
 
 //初始化植物列表数据,名称,icon,时间,点云位置,子点云,缩放比例
 let plantData = ref([
-  {"id":1,"name":"杜仲","icon":"/caoyao.png","scantime":"2024-10-24","file":"/plant_points/herb2 - Cloud.ply","scale":3,"children":[],
+  {"id":1,"name":"第一盆","icon":"/wheat.png","scantime":"2024-11-24","file":"/plant_points/herb2 - Cloud.ply","scale":3,"children":arr_demo3,
     "url":urls[0],
     "code":"bx0001"
   },
-  {"id":2,"name":"杜仲","icon":"/caoyao.png","scantime":"2024-10-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":[],
+  {"id":2,"name":"第二盆","icon":"/wheat.png","scantime":"2024-11-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":[],
     "url":urls[1],
     "code":"bx0002"
   },
-  {"id":3,"name":"麦穗1","icon":"/wheat.png","scantime":"2024-10-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
+  {"id":3,"name":"第三盆","icon":"/wheat.png","scantime":"2024-11-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
     "url":urls[2],
     "code":"bx0003"
   }
@@ -983,68 +997,3 @@ canvas {
 .it-img{width:100%;height:100%;}
 .col-title{height:100px;line-height: 100px;font-size: 30px;font-weight: 700;}
 .col-content{height:45px;line-height: 45px;font-size: 20px;color:beige;}
-
-
-
-.video1{position:absolute;top:10px;right:0;padding:10px;width:500px;height:300px;background-color: #fff;}
-
-.video2{position:absolute;top:320px;right:0;padding:10px;width:500px;height:300px;background-color: #fff;}
-
-.compute-info{position:absolute;top:100px;right:1%;padding:10px;width:200px;color:#fff;border: 1px solid #fff;border-radius: 5px;}
-.compute-sub{width:200px;position: relative;}
-.compute-sub>div{padding: 5px 10px;}
-.compute-sub>div.info-title{font-size: large;color:antiquewhite;text-shadow:  0 0 12px yellow;}
-
-.compute-sub>span{position: absolute;top:-20px;right:0;display: inline-block;width:30px;height:30px;text-align: center;border-radius: 50%;border: 1px solid #fff;font-size: 20px;background-color: #333;cursor: pointer;line-height: 30px;}
-
-.compute-sub>span:hover{
-  background-color: #fff;
-  color:#333;
-}
-
-#video-player{width:100%;height:100%;}
-
-.remote-ctl{
-  position:absolute;top:180px;left:0;padding:20px;
-  color:#fff;
-  border: 1px solid #fff;
-}
-
-.remote-ctl>div{
-  margin-top:20px;
-  color:#fff;
-}
-
-.remote-ctl>div span{
-  display: inline-block;
-  width:50px;
-}
-
-.remote-video{
-  position:absolute;top:100px;left:0;padding:20px;
-  color:#fff;
-  border: 1px solid #fff;
-}
-
-.load-spin{
-  position:absolute;
-  top:50%;
-  left:50%;
-}
-
-.remote-nerf{
-  position:absolute;top:230px;left:0;padding:20px;width:550px;
-  color:#fff;
-  border: 1px solid #fff;
-}
-
-.remote-tool{
-  position:absolute;top:330px;left:0;padding:20px;width:380px;
-  color:#fff;
-  border: 1px solid #fff;
-}
-
-
-
-
-</style>
