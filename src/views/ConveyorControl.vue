@@ -23,7 +23,7 @@ import PageLayout from '../components/PageLayout.vue'
 import CameraView from '../components/CameraView.vue'
 import TransportControl from '../components/TransportControl.vue'
 import ConveyorDiagram from '../components/ConveyorDiagram.vue'
-import YsView from '../components/YsView.vue'
+import YsView from '../components/YsView.vue';
 </script>
 
 <style scoped>

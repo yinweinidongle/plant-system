@@ -75,7 +75,7 @@ const initPlayer = async () => {
     const accessToken = response.data.accessToken
     
     // 使用默认设备ID构建URL
-    const deviceUrl = `ezopen://open.ys7.com/BE1298292/1.hd.live`
+    const deviceUrl = `ezopen://open.ys7.com/BE1298292/1.live`
     
     // 销毁旧的播放器实例
     if (player.value) {

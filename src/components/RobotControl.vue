@@ -109,13 +109,23 @@ import { ElMessage } from 'element-plus'
 const isConnected = ref(false)
 const stepSize = ref(1)
 const joints = reactive([
-  { value: 0, min: -180, max: 180 },
-  { value: 0, min: -180, max: 180 },
-  { value: 0, min: -180, max: 180 },
-  { value: 0, min: -180, max: 180 },
-  { value: 0, min: -180, max: 180 },
-  { value: 0, min: -180, max: 180 }
+  { value: 0, min: -1*Math.PI, max: Math.PI },
+  { value: 0, min: -1*Math.PI, max: Math.PI },
+  { value: 0, min: -1*Math.PI, max: Math.PI },
+  { value: 0, min: -1*Math.PI, max: Math.PI },
+  { value: 0, min: -1*Math.PI, max: Math.PI },
+  { value: 0, min: -1*Math.PI, max: Math.PI }
 ])
+
+//角度与弧度转换
+const radian = (angle) => {
+  return angle * Math.PI / 180
+}
+
+const toAngle = (arc)=>{
+  return arc * 180 / Math.PI
+}
+ 
 
 const toggleConnection = async () => {
   try {
@@ -128,7 +138,7 @@ const toggleConnection = async () => {
     if (newStatus) {
       // 连接成功后获取当前关节状态
       const status = await robotApi.getJointsStatus()
-      status.joints.forEach((angle, index) => {
+      status.status.forEach((angle, index) => {
         joints[index].value = angle
       })
     }
@@ -139,10 +149,11 @@ const toggleConnection = async () => {
 }
 
 const adjustJoint = (index, direction) => {
-  const newValue = joints[index].value + (direction * stepSize.value)
+  const newValue = joints[index].value + (direction * radian(stepSize.value))
   if (newValue >= joints[index].min && newValue <= joints[index].max) {
     joints[index].value = newValue
-    onJointChange(index, newValue)
+    console.log(joints)
+    //onJointChange(index, newValue)
   }
 }
 

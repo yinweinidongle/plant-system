@@ -98,22 +98,25 @@ let arr_info = [
 ]
 
 const urls = [
-  "https://www.baidu.com",
-  "https://baijiahao.baidu.com/s?id=1817739940100121932",
-  "https://map.baidu.com/"
+  "http://localhost:35747",
+  "http://localhost:7007",
+  "http://localhost:35747"
 ]
 
 
 //初始化植物列表数据,名称,icon,时间,点云位置,子点云,缩放比例
 let plantData = ref([
   {"id":1,"name":"杜仲","icon":"/caoyao.png","scantime":"2024-10-24","file":"/plant_points/herb2 - Cloud.ply","scale":3,"children":[],
-    "url":urls[0]
+    "url":urls[0],
+    "code":"bx0001"
   },
   {"id":2,"name":"杜仲","icon":"/caoyao.png","scantime":"2024-10-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":[],
-    "url":urls[1]
+    "url":urls[1],
+    "code":"bx0002"
   },
   {"id":3,"name":"麦穗1","icon":"/wheat.png","scantime":"2024-10-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
-    "url":urls[2]
+    "url":urls[2],
+    "code":"bx0003"
   }
   
 ])
@@ -751,6 +754,7 @@ function resize(){
         <div class="it-col">
           <div class="col-title">{{ item.name }}</div>
           <div class="col-content">扫描时间：{{ item.scantime }}</div>
+          <div class="col-content">ID：{{ item.code }}</div>
         </div>
       </div>
 
@@ -762,8 +766,8 @@ function resize(){
 
 
     <div id="left-section">
-        <!-- <iframe :src="url"></iframe> -->
-         <img src="../../assets/points.png" alt="">
+        <iframe :src="url"></iframe>
+         <!-- <img src="../../assets/points.png" alt=""> -->
     </div>
     <div id="right-section">
         <canvas id="canvas"></canvas>
@@ -875,7 +879,7 @@ canvas {
     transform-origin: top right;
     transition:transform 1.5s ease-in-out;
 }
-.camera{position:absolute;top:0;left:0;padding:10px;}
+.camera{position:absolute;top:0;right:0;padding:10px;}
 .camera>div{margin-right:10px;background:#333;color:#fff;padding:5px 10px;border:1px solid #fff;border-radius:2px;margin-top:10px;cursor: pointer;float:left;}
 
 .camera>div:hover{background:#fff;color: #333;;padding:5px 10px;border:1px solid #fff;border-radius:2px;margin-top:10px;cursor: pointer;}
@@ -949,6 +953,7 @@ canvas {
 .list-item{
   display: flex;
   flex-direction: row;
+  flex:1;
   height:200px;
   border-right: #fff 1px solid;
 }
@@ -976,7 +981,7 @@ canvas {
 }
 .it-img{width:100%;height:100%;}
 .col-title{height:100px;line-height: 100px;font-size: 30px;font-weight: 700;}
-.col-content{height:100px;line-height: 100px;font-size: 20px;color:beige;}
+.col-content{height:45px;line-height: 45px;font-size: 20px;color:beige;}
 
 
 
