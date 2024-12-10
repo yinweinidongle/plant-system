@@ -112,14 +112,19 @@ let arr_demo3 = [{"name":"麦穗","count":"29","filename":"/pcd_demo/demo3/grain
 {"name":"茎秆2","width":"0.9724cm","length":"17.1723cm","area":"22.3211cm²","filename":"/pcd_demo/demo3/stem2.ply"}]
 
 const urls = [
+<<<<<<< HEAD
   
+=======
+  "http://localhost:55785",
+>>>>>>> cf05e45ce06ed58b71bfb85cb2181604854033d2
   "http://localhost:7007",
-  "http://localhost:35747"
+  "http://localhost:7007"
 ]
 
 
 //初始化植物列表数据,名称,icon,时间,点云位置,子点云,缩放比例
 let plantData = ref([
+<<<<<<< HEAD
   {"id":1,"name":"第一盆","icon":"/wheat.png","scantime":"2024-11-24","file":"/plant_points/herb2 - Cloud.ply","scale":3,"children":arr_demo3,
     "url":urls[0],
     "code":"bx0001"
@@ -129,6 +134,17 @@ let plantData = ref([
     "code":"bx0002"
   },
   {"id":3,"name":"第三盆","icon":"/wheat.png","scantime":"2024-11-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
+=======
+  {"id":1,"name":"第一盆","icon":"/wheat.png","scantime":"2024-10-24","file":"/plant_points/herb2 - Cloud.ply","scale":3,"children":[],
+    "url":urls[0],
+    "code":"bx0001"
+  },
+  {"id":2,"name":"第二盆","icon":"/wheat.png","scantime":"2024-10-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":[],
+    "url":urls[1],
+    "code":"bx0002"
+  },
+  {"id":3,"name":"第三盆","icon":"/wheat.png","scantime":"2024-10-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
+>>>>>>> cf05e45ce06ed58b71bfb85cb2181604854033d2
     "url":urls[2],
     "code":"bx0003"
   }
