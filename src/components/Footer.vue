@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <p>© {{ currentYear }} 作物表型分析系统</p>
+      <p>© {{ currentYear }} 中科合肥智能育种加速器创新研究院</p>
     </div>
   </footer>
 </template>

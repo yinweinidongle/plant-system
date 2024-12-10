@@ -840,6 +840,7 @@ html, body {
   height: 100vh;
   overflow: hidden;
   float: left;
+  border-right: 10px solid #fff;
 }
 
 #right-section {
