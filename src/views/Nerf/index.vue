@@ -113,8 +113,9 @@ let arr_demo3 = [{"name":"麦穗","count":"29","filename":"/pcd_demo/demo3/grain
 
 const urls = [
   
-  "http://localhost:7007",
-  "http://localhost:7007"
+  "http://localhost:7008",
+  "http://localhost:7008",
+  "http://localhost:7008",
 ]
 
 
