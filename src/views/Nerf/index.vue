@@ -102,7 +102,7 @@ let arr_demo3 = [{"name":"麦穗","count":"29","filename":"/pcd_demo/demo3/grain
 {"name":"麦穗","count":"18","filename":"/pcd_demo/demo3/grain1.ply"},
 {"name":"麦穗","count":"45","filename":"/pcd_demo/demo3/grain2.ply"},
 {"name":"叶子1","width":"0.4255cm","length":"8.0926cm","area":"5.3354cm²","filename":"/pcd_demo/demo3/leaf0.ply"},
-{"name":"叶子2","width":"2.4131cm","length":"8.0926cm","area":"12.3466cm²","filename":"/pcd_demo/demo3/leaf1.ply"},
+{"name":"叶子2","width":"2.4131cm","length":"8.0926cm","area":"12.3466cm²","angle":"28°","filename":"/pcd_demo/demo3/leaf1.ply"},
 {"name":"叶子3","width":"0.2409cm","length":"3.6027cm","area":"0.505cm²","filename":"/pcd_demo/demo3/leaf2.ply"},
 {"name":"叶子4","width":"0.3385cm","length":"7.6152cm","area":"4.6769cm²","filename":"/pcd_demo/demo3/leaf3.ply"},
 {"name":"叶子5","width":"0.4164cm","length":"10.4487cm","area":"6.3229cm²","filename":"/pcd_demo/demo3/leaf4.ply"},
@@ -110,6 +110,44 @@ let arr_demo3 = [{"name":"麦穗","count":"29","filename":"/pcd_demo/demo3/grain
 {"name":"茎秆0","width":"0.5896cm","length":"21.7409cm","area":"26.2885cm²","filename":"/pcd_demo/demo3/stem0.ply"},
 {"name":"茎秆1","width":"0.7404cm","length":"13.1906cm","area":"16.1106cm²","filename":"/pcd_demo/demo3/stem1.ply"},
 {"name":"茎秆2","width":"0.9724cm","length":"17.1723cm","area":"22.3211cm²","filename":"/pcd_demo/demo3/stem2.ply"}]
+
+
+let arr_demo2 = [{"name":"麦穗","count":"30","filename":"/pcd_demo/demo2/grain0.ply"},
+{"name":"麦穗","count":"39","filename":"/pcd_demo/demo2/grain1.ply"},
+{"name":"麦穗","count":"35","filename":"/pcd_demo/demo2/grain2.ply"},
+{"name":"麦穗","count":"29","filename":"/pcd_demo/demo2/grain3.ply"},
+{"name":"叶子1","width":"0.6868cm","length":"8.6309cm","area":"5.3354cm²","filename":"/pcd_demo/demo2/leaf0.ply"},
+{"name":"叶子2","width":"0.6079cm","length":"13.564cm","area":"12.3466cm²","filename":"/pcd_demo/demo2/leaf1.ply"},
+{"name":"叶子3","width":"0.8049cm","length":"7.982cm","area":"0.505cm²","filename":"/pcd_demo/demo2/leaf2.ply"},
+{"name":"叶子4","width":"0.5074cm","length":"8.5281cm","area":"4.6769cm²","filename":"/pcd_demo/demo2/leaf3.ply"},
+{"name":"叶子5","width":"0.4601cm","length":"1.8644cm","area":"6.3229cm²","filename":"/pcd_demo/demo2/leaf4.ply"},
+{"name":"叶子6","width":"0.7.004cm","length":"11.3986cm","area":"6.3229cm²","filename":"/pcd_demo/demo2/leaf5.ply"},
+{"name":"茎秆1","width":"","length":"18.0227cm","area":"","filename":"/pcd_demo/demo2/stem0.ply"},
+{"name":"茎秆2","width":"","length":"16.1854cm","area":"","filename":"/pcd_demo/demo2/stem1.ply"},
+{"name":"茎秆3","width":"","length":"17.4604cm","area":"","filename":"/pcd_demo/demo2/stem2.ply"},
+{"name":"茎秆4","width":"","length":"9.7827cm","area":"","filename":"/pcd_demo/demo2/stem3.ply"}]
+
+
+let arr_demo1 = [{"name":"麦穗","count":"36","filename":"/pcd_demo/demo1/grain0.ply"},
+{"name":"麦穗","count":"19","filename":"/pcd_demo/demo1/grain1.ply"},
+{"name":"麦穗","count":"33","filename":"/pcd_demo/demo1/grain2.ply"},
+{"name":"麦穗","count":"48","filename":"/pcd_demo/demo1/grain3.ply"},
+{"name":"叶子1","width":"0.1609cm","length":"2.3998cm","area":"0.87284cm²","filename":"/pcd_demo/demo1/leaf0.ply"},
+{"name":"叶子2","width":"0.1167cm","length":"0.7973cm","area":"0.1613cm²","filename":"/pcd_demo/demo1/leaf1.ply"},
+{"name":"叶子3","width":"0.4190cm","length":"1.4334cm","area":"0.5613cm²","filename":"/pcd_demo/demo1/leaf2.ply"},
+{"name":"叶子4","width":" 0.7144cm","length":"0.6921cm","area":"0.1925cm²","filename":"/pcd_demo/demo1/leaf3.ply"},
+{"name":"叶子5","width":" 0.2604cm","length":"3.498cm","area":"0.7260cm²","filename":"/pcd_demo/demo1/leaf4.ply"},
+{"name":"叶子6","width":"0.09314cm","length":"2.3952cm","area":"0.3534cm²","filename":"/pcd_demo/demo1/leaf5.ply"},
+{"name":"叶子7","width":"0.1053cm","length":"2.6440cm","area":" 0.6404cm²","filename":"/pcd_demo/demo1/leaf6.ply"},
+{"name":"叶子8","width":"0.1506cm","length":"2.7022cm","area":"0.4599cm²","filename":"/pcd_demo/demo1/leaf7.ply"},
+{"name":"叶子9","width":"0.0681cm","length":"2.3627cm","area":"0.3838cm²","filename":"/pcd_demo/demo1/leaf8.ply"},
+{"name":"叶子10","width":"0.1074cm","length":"2.3337cm","area":" 0.6220cm²","filename":"/pcd_demo/demo1/leaf9.ply"},
+{"name":"叶子11","width":" 0.0825cm","length":"2.2776cm","area":"0.4417cm²","filename":"/pcd_demo/demo1/leaf10.ply"},
+{"name":"叶子0","width":"","length":"2.3998cm","area":"0.384497cm²","filename":"/pcd_demo/demo1/leaf11.ply"},
+{"name":"茎秆1","width":"","length":"6.3973cm","area":" ","filename":"/pcd_demo/demo1/stem0.ply"},
+{"name":"茎秆2","width":"","length":"2.7195cm","area":" ","filename":"/pcd_demo/demo1/stem1.ply"},
+{"name":"茎秆3","width":"","length":"4.3533cm","area":" ","filename":"/pcd_demo/demo1/stem2.ply"},
+{"name":"茎秆4","width":"","length":"3.0039cm","area":" ","filename":"/pcd_demo/demo1/stem3ply"}]
 
 const urls = [
   
@@ -125,11 +163,11 @@ let plantData = ref([
     "url":urls[0],
     "code":"bx0001"
   },
-  {"id":2,"name":"第二盆","icon":"/wheat.png","scantime":"2024-11-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":[],
+  {"id":2,"name":"第二盆","icon":"/wheat.png","scantime":"2024-11-09","file":"/plant_points/point_cloud_20241023.ply","scale":10,"children":arr_demo2,
     "url":urls[1],
     "code":"bx0002"
   },
-  {"id":3,"name":"第三盆","icon":"/wheat.png","scantime":"2024-11-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_info,
+  {"id":3,"name":"第三盆","icon":"/wheat.png","scantime":"2024-11-12","file":"/plant_points/point_cloud_wheat.ply","scale":3,"children":arr_demo1,
     "url":urls[2],
     "code":"bx0003"
   }
@@ -803,6 +841,7 @@ function resize(){
       <div class="info-content" v-if="!showGrain && objInfo.length">叶长：{{ objInfo.length }}</div>
       <div class="info-content" v-if="!showGrain && objInfo.width">叶宽：{{ objInfo.width }}</div>
       <div class="info-content" v-if="!showGrain && objInfo.width">叶片面积：{{ objInfo.area }}</div>
+      <div class="info-content" v-if="!showGrain && objInfo.angle">叶倾角：{{ objInfo.angle }}</div>
 
       <span @click="closeInfo"><CloseOutlined /></span>
 
